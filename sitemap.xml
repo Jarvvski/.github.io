@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jarvvski.github.io/about/</loc>
+    <loc>https://jarvvski.github.io/posts/about/</loc>
     <lastmod>2017-07-31T20:24:37+00:00</lastmod>
   </url>
   
@@ -75,13 +75,13 @@
   
   <url>
     <loc>https://jarvvski.github.io/</loc>
-    <lastmod>2017-07-31T20:49:15+01:00</lastmod>
+    <lastmod>2017-07-31T20:24:37+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jarvvski.github.io/posts/</loc>
-    <lastmod>2017-07-31T20:49:15+01:00</lastmod>
+    <lastmod>2017-07-31T20:24:37+00:00</lastmod>
     <priority>0</priority>
   </url>
   
