@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jarvvski.github.io/about/</loc>
-    <lastmod>2017-07-31T21:24:37+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://jarvvski.github.io/posts/hello-world/</loc>
     <lastmod>2017-07-31T20:49:15+01:00</lastmod>
   </url>
@@ -30,6 +25,10 @@
   <url>
     <loc>https://jarvvski.github.io/posts/migrate-from-jekyll/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jarvvski.github.io/about/</loc>
   </url>
   
   <url>
