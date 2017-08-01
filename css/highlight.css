@@ -105,6 +105,15 @@
   opacity: 0.7;
 }
 
+table.hljs-ln {
+	margin: 0px;
+	border: none;
+}
+
+table.hljs-ln tr, td{
+	border: none;
+	background-color: none;
+}
 /* for block of numbers */
 td.hljs-ln-numbers {
 	-webkit-touch-callout: none;
@@ -117,7 +126,7 @@ td.hljs-ln-numbers {
 	text-align: center;
 	color: #ccc;
 	vertical-align: top;
-	padding-right: 5px;
+	padding-right: 7px;
 
 	/* your custom style here */
 }
