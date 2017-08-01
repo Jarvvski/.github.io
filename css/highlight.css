@@ -104,34 +104,3 @@
 .xml .hljs-cdata {
   opacity: 0.7;
 }
-
-table.hljs-ln {
-	margin: 0px;
-	border: none;
-}
-
-table.hljs-ln tr, td{
-	border: none;
-	background-color: none;
-}
-/* for block of numbers */
-td.hljs-ln-numbers {
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-
-	text-align: center;
-	color: #ccc;
-	vertical-align: top;
-	padding-right: 7px;
-
-	/* your custom style here */
-}
-
-/* for block of code */
-td.hljs-ln-code {
-	padding-left: 10px;
-}
