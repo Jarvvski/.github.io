@@ -6,10 +6,19 @@
     <description>Recent content in Code on Jarrvski</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 Jul 2017 23:55:09 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Aug 2017 20:26:37 +0000</lastBuildDate>
     
 	<atom:link href="https://jarvvski.github.io/tags/code/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker</title>
+      <link>https://jarvvski.github.io/posts/docker/</link>
+      <pubDate>Wed, 09 Aug 2017 20:26:37 +0000</pubDate>
+      
+      <guid>https://jarvvski.github.io/posts/docker/</guid>
+      <description>My deep desire to throw myself against brick walls has reared it&amp;rsquo;s ugly head once more. An Open Source project I work on has recently taken on another member from the community I work in. This meant no more simple FTP&amp;rsquo;ing over into our dev server. Now we needed shards. For each developer&amp;hellip; Otherwise we would start to cross streams as we worked on different parts of the project.</description>
+    </item>
     
     <item>
       <title>The correct way to write fizz-buzz</title>

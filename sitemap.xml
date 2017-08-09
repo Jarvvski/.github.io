@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jarvvski.github.io/posts/docker/</loc>
+    <lastmod>2017-08-09T20:26:37+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jarvvski.github.io/posts/fizz-buzz/</loc>
     <lastmod>2017-07-31T23:55:09+00:00</lastmod>
   </url>
@@ -13,19 +18,37 @@
   </url>
   
   <url>
+    <loc>https://jarvvski.github.io/tags/automation/</loc>
+    <lastmod>2017-08-09T20:26:37+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jarvvski.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jarvvski.github.io/tags/code/</loc>
-    <lastmod>2017-07-31T23:55:09+00:00</lastmod>
+    <lastmod>2017-08-09T20:26:37+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jarvvski.github.io/tags/devops/</loc>
+    <lastmod>2017-08-09T20:26:37+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jarvvski.github.io/tags/docker/</loc>
+    <lastmod>2017-08-09T20:26:37+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jarvvski.github.io/</loc>
-    <lastmod>2017-07-31T23:55:09+00:00</lastmod>
+    <lastmod>2017-08-09T20:26:37+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -37,13 +60,13 @@
   
   <url>
     <loc>https://jarvvski.github.io/posts/</loc>
-    <lastmod>2017-07-31T23:55:09+00:00</lastmod>
+    <lastmod>2017-08-09T20:26:37+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jarvvski.github.io/tags/</loc>
-    <lastmod>2017-07-31T23:55:09+00:00</lastmod>
+    <lastmod>2017-08-09T20:26:37+00:00</lastmod>
     <priority>0</priority>
   </url>
   

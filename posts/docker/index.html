@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Adam Jarvis">
+<meta name="description" content="Personal blog and code storybook">
+<meta name="generator" content="Hugo 0.25.1" />
+<title>Docker</title>
+<link rel="shortcut icon" href="https://jarvvski.github.io/images/favicon.ico">
+<link rel="stylesheet" href="https://jarvvski.github.io/css/style.css">
+<link rel="stylesheet" href="https://jarvvski.github.io/css/highlight.css">
+
+
+
+<link rel="stylesheet" href="https://jarvvski.github.io/css/monosocialiconsfont.css">
+
+
+
+<link href="https://jarvvski.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Jarrvski" />
+
+
+<meta property="og:title" content="Docker" />
+<meta property="og:description" content="Containers, containers I tell you!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jarvvski.github.io/posts/docker/" />
+
+
+
+<meta property="article:published_time" content="2017-08-09T20:26:37&#43;00:00"/>
+<meta property="article:modified_time" content="2017-08-09T20:26:37&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Docker">
+<meta itemprop="description" content="Containers, containers I tell you!">
+
+
+<meta itemprop="dateModified" content="2017-08-09T20:26:37&#43;00:00" />
+<meta itemprop="wordCount" content="418">
+
+
+
+<meta itemprop="keywords" content="docker,Devops,code,automation," />
+
+
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:text:title" content="Docker"/>
+<meta name="twitter:title" content="Docker"/>
+<meta name="twitter:description" content="Containers, containers I tell you!"/>
+<meta name="twitter:site" content="@https://www.twitter.com/jarvvski"/>
+
+
+    </head>
+<body>
+    <nav class="main-nav">
+	
+		<a href='https://jarvvski.github.io'> <span class="arrow">←</span>Home</a>
+	
+
+	
+ 		<a href='/about/'>About me</a>
+  	
+
+	
+		<a class="cta" href="https://jarvvski.github.io/index.xml">Subscribe</a>
+	
+</nav>
+
+    <section id="wrapper">
+        
+        
+<article class="post">
+    <header>
+        <h1>Docker</h1>
+        <h2 class="headline">
+        August 9, 2017
+        <br>
+        
+        
+            
+                <a href="https://jarvvski.github.io/tags/docker">docker</a>
+            
+                <a href="https://jarvvski.github.io/tags/devops">Devops</a>
+            
+                <a href="https://jarvvski.github.io/tags/code">code</a>
+            
+                <a href="https://jarvvski.github.io/tags/automation">automation</a>
+            
+        
+        
+        </h2>
+    </header>
+    <section id="post-body">
+        
+
+<p>My deep desire to throw myself against brick walls has reared it&rsquo;s ugly head once more. An <a href="https://github.com/Jarvvski/CavTools">Open Source project</a> I work on has recently taken on another member from the <a href="https://7cav.us">community</a> I work in. This meant no more simple FTP&rsquo;ing over into our dev server. Now we needed shards. For each developer&hellip; Otherwise we would start to cross streams as we worked on different parts of the project.</p>
+
+<p>We needed local dev environments.</p>
+
+<h3 id="attempt-1">Attempt 1:</h3>
+
+<p>A command line tool in node js to automate the process of building a web server, installing the dependencies, downloading an encrypted database and prompting a user for a password.</p>
+
+<p>This started well, until I got into major <a href="http://callbackhell.com">callback hell</a>.</p>
+
+<p>Time to move on.</p>
+
+<h3 id="attempt-2">Attempt 2:</h3>
+
+<p>A command line tool in bash to do the same thing as above&hellip;</p>
+
+<p>Now to be fair this very nearly worked out. I had several functions to handle adding items and dependencies. Even nice color functions!</p>
+
+<pre><code>fancy_echo()
+{
+    local txt=&quot;$1&quot;
+    local clr=&quot;$2&quot;
+    local escChr=&quot;\033[&quot;;
+    local rstChr=&quot;\033[0m&quot;;
+    local prLn=&quot;$escChr$blue==&gt; $rstChr&quot;;
+    local use;
+
+    if [ &quot;$clr&quot; == &quot;&quot; ]; then
+        printf &quot;$prLn$txt\n&quot;
+    else
+        printf &quot;$prLn$escChr$2$txt$rstChr\n&quot;
+    fi
+}
+</code></pre>
+
+<p><img src="https://i.imgur.com/kEcJ7fX.png" alt="" /></p>
+
+<p>But alas, the issues of cross platform support finally got to me as I started realising I needed completely different dependencies for Linux and Windows.</p>
+
+<h3 id="attempt-3">Attempt 3:</h3>
+
+<p>I had been checking out the <a href="https://education.github.com/pack">Github Student Pack</a> and looked into <a href="https://travis-ci.org/">Travis CI</a> having realised I got free private builds as a student. But after more research I stumbled across <a href="https://www.docker.com">Docker</a>! After running through the quick-start, I got to the point where I had a reasonable understanding of how the system worked.</p>
+
+<p>Three days later, I emerge from my home-office with a localhost env linked up to 2 private images under the <a href="https://7cav.us">Cav&rsquo;s</a> organisation. One for the mySQL database, the other as an Apache web server. This combined with Dockers <a href="https://docs.docker.com/engine/tutorials/dockervolumes/">volume</a> wizardry, meant our new local environments would remain persistent across shutdown so long as the volumes remained on the system. Perfect!</p>
+
+<p><img src="https://i.imgur.com/XBwTjJ5.png" alt="" /></p>
+
+<p>I even took the time to setup the automated builds for the images based on two branches I maintained for each image. One for <code>stable</code> releases based on the last current live server, the other <code>latest</code> for the burning edge development.</p>
+
+<h3 id="not-the-end">Not the end&hellip;</h3>
+
+<p>Having explored and experimented with Docker over the past few days, I now have a large affection for automated builds and containers. I knew I enjoyed automation already, hence the <a href="https://github.com/Jarvvski/CavTools">project</a> in the first place. But now a whole world is opening up.</p>
+
+<p>Next stop, <strong>Travis CI</strong>.</p>
+
+    </section>
+</article>
+
+<footer id="post-meta" class="clearfix">
+    <a href="https://twitter.com/jarvvski">
+    <img class="avatar" src="https://jarvvski.github.io/images/avatar.png">
+    <div>
+        <span class="dark">Adam Jarvis</span>
+        <span>Some guy</span>
+    </div>
+    </a>
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fjarvvski.github.io%2fposts%2fdocker%2f - Docker by @jarvvski"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+    </section>
+</footer>
+
+
+
+<ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+
+    
+    
+    
+        <li>
+            <a href="/posts/fizz-buzz/">The correct way to write fizz-buzz<aside class="dates">Jul 31 2017</aside></a>
+        </li>
+    
+</ul>
+
+
+
+        <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    
+    <a class="symbol" href="https://www.github.com/Jarvvski">
+        circlegithub
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/jarvvski">
+        circletwitterbird
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2017 Adam Jarvis
+    
+    </p>
+</footer>
+
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script src="https://jarvvski.github.io/js/main.js"></script>
+<script src="https://jarvvski.github.io/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-103803191-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
